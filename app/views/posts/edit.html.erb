@@ -1,0 +1,19 @@
+<h1>Edit this post</h1>
+
+<%= form_for(@post) do |f| %>
+<%= render partial: "shared/flash" %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', posts_path %>
