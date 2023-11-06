@@ -15,9 +15,20 @@ Rails.application.routes.draw do
 
   #set posts as route so that the user will not have to type in /posts
 
-  root "posts#index"
+  # root "posts#index"
   
-  resources :posts
+  # resources :posts
+# get    '/posts/:post_id/comments', to: 'comments#index', as: 'post_comments'
+#   post   '/posts/:post_id/comments', to: 'comments#create'
+#   get    '/posts/:post_id/comments/new', to: 'comments#new',   as: 'new_post_comment'
+#   get    '/posts/:post_id/comments/:id', to: 'comments#show',  as: 'post_comment'
+#   get    '/posts/:post_id/comments/:id/edit', to: 'comments#edit',  as: 'edit_post_comment'
+#   patch  '/posts/:post_id/comments/:id', to: 'comments#update'
+#   delete '/posts/:post_id/comments/:id', to: 'comments#destroy'
 
+
+  resources :posts do
+    resources :comments
+  end
 
 end
